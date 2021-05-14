@@ -2,9 +2,6 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
 name: Python package
-env:
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 on:
   push:
@@ -24,6 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Print Secrets
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         echo "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
         echo "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
