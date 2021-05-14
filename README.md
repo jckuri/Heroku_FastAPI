@@ -3,7 +3,7 @@
 **Machine Learning DevOps Engineer Nanodegree<br/>
 https://classroom.udacity.com/nanodegrees/nd0821**
 
-![Badge](actions/workflows/python-package.yml)
+![Badge](https://github.com/jckuri/Heroku_FastAPI/blob/main/.github/workflows/python-package.yml/badge.svg)
 
 Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
 
