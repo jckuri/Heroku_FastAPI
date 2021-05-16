@@ -9,6 +9,14 @@ import starter.starter.ml.model as ml_model
 import starter.starter.ml.data as ml_data
 import starter.starter.train_model as train_model
 
+import os
+
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system("dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r .dvc .apt/usr/lib/dvc")
+
 app = fastapi.FastAPI()
 
 @app.get("/")
