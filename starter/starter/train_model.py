@@ -6,10 +6,10 @@ import sklearn.model_selection
 
 import pandas as pd
 import time
-import starter.ml.data as ml_data
-import starter.ml.model as ml_model
+import starter.starter.ml.data as ml_data
+import starter.starter.ml.model as ml_model
 
-DATA_FILE = "data/census.csv"
+DATA_FILE = "starter/data/census.csv"
 CAT_FEATURES = [
     "workclass",
     "education",
@@ -20,9 +20,9 @@ CAT_FEATURES = [
     "sex",
     "native-country"]
 LABEL_FEATURE = "salary"
-MODEL_FILE = 'model/rfc_model.pkl'
-ENCODER_FILE = 'model/encoder.pkl'
-LB_FILE = 'model/lb.pkl'    
+MODEL_FILE = 'starter/model/rfc_model.pkl'
+ENCODER_FILE = 'starter/model/encoder.pkl'
+LB_FILE = 'starter/model/lb.pkl'    
 SLICE_TEXTFILE = 'slice_output.txt'
 
 # Add code to load in the data.
@@ -109,7 +109,7 @@ def main():
     #print_xy('\nX_train', X_train, y_train)
     print('\nX_test[0]:\n', X_test[0])
     
-    #train_and_save_model(X_train, y_train)
+    train_and_save_model(X_train, y_train)
     
     model = ml_model.load_model(MODEL_FILE)
     compute_results(model, X_test, y_test)

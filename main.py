@@ -5,9 +5,9 @@ import pydantic
 import pandas
 import numpy
 
-import starter.ml.model as ml_model
-import starter.ml.data as ml_data
-import starter.train_model
+import starter.starter.ml.model as ml_model
+import starter.starter.ml.data as ml_data
+import starter.starter.train_model as train_model
 
 app = fastapi.FastAPI()
 
@@ -34,9 +34,9 @@ DF_COLUMNS = ['age', 'workclass', 'fnlgt', 'education', 'education-num',
 class ModelFunctions:
 
     def __init__(self):
-        self.encoder = ml_model.load_object(starter.train_model.ENCODER_FILE)
-        self.lb = ml_model.load_object(starter.train_model.LB_FILE)
-        self.model = ml_model.load_model(starter.train_model.MODEL_FILE)
+        self.encoder = ml_model.load_object(train_model.ENCODER_FILE)
+        self.lb = ml_model.load_object(train_model.LB_FILE)
+        self.model = ml_model.load_model(train_model.MODEL_FILE)
         
     def person_to_df(self, p):
         data = [[p.age, p.workclass, p.fnlgt, p.education, p.education_num, 
@@ -47,7 +47,7 @@ class ModelFunctions:
         return df
         
     def process_row(self, df):
-        x, y = starter.train_model.process_test_dataset(df, self.encoder, self.lb)
+        x, y = train_model.process_test_dataset(df, self.encoder, self.lb)
         return x
         
     def person_to_numpy(self, p):
