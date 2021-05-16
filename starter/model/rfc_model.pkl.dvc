@@ -1,0 +1,4 @@
+outs:
+- md5: 390aed3cc49624eca131ab0dcab91e00
+  size: 185061867
+  path: rfc_model.pkl
