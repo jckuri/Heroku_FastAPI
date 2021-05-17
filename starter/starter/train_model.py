@@ -65,7 +65,7 @@ def process_test_dataset(test_dataset, encoder, lb):
 def process_datasets(train_dataset, test_dataset):
     X_train, y_train, encoder, lb = process_train_dataset(train_dataset)
     X_test, y_test = process_test_dataset(test_dataset, encoder, lb)
-    return X_train, y_train, X_test, y_test
+    return X_train, y_train, X_test, y_test, encoder, lb
 
 
 def seconds_to_string(seconds):
@@ -109,21 +109,63 @@ def print_xy(title, X, y):
     print("{} {}:\n{}".format(title, X.shape, X[:5]))
 
 
+def compute_results_of_slice(slice_df, model, encoder, lb):
+    X, y = process_test_dataset(slice_df, encoder, lb)
+    preds = ml_model.inference(model, X)
+    precision, recall, fbeta = ml_model.compute_model_metrics(y, preds)
+    return precision, recall, fbeta
+    
+    
+def classify_test_dataset(test_dataset, model, encoder, lb):
+    young_people = test_dataset[test_dataset['age'] <= 50]
+    old_people = test_dataset[test_dataset['age'] > 50]
+    men = test_dataset[test_dataset['sex'] == 'Male']
+    women = test_dataset[test_dataset['sex'] == 'Female']
+    print('young_people.shape', young_people.shape)
+    print('old_people.shape', old_people.shape)
+    print('young_people + old_people:', young_people.shape[0] + old_people.shape[0], '\n')
+    print('men.shape', men.shape)
+    print('women.shape', women.shape)
+    print('men + women:', men.shape[0] + women.shape[0], '\n')
+    young_men = young_people[young_people['sex'] == 'Male']
+    young_women = young_people[young_people['sex'] == 'Female']
+    old_men = old_people[old_people['sex'] == 'Male']
+    old_women = old_people[old_people['sex'] == 'Female']
+    print('young_men.shape', young_men.shape)
+    print('young_women.shape', young_women.shape)
+    print('old_men.shape', old_men.shape)
+    print('old_women.shape', old_women.shape)
+    print('young_men + young_women + old_men + old_women:', young_men.shape[0] + young_women.shape[0] + old_men.shape[0] + old_women.shape[0], '\n')
+    print('ALL: test_dataset.shape', test_dataset.shape)
+    slices_dict = {'Young Men': young_men, 'Young Women': young_women, 
+        'Old Men\t': old_men, 'Old Women': old_women, 'Young\t': young_people,
+        'Old\t': old_people, 'Men\t': men, 'Women\t': women, 
+        'Test Dataset': test_dataset}
+    print('\nSLICE\t\t\tPRECISION\tRECALL\t\tF-BETA')
+    for slice_name in slices_dict.keys():
+        slice_df = slices_dict[slice_name]
+        precision, recall, fbeta = compute_results_of_slice(slice_df, model, encoder, lb)
+        print('{}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}'.format(slice_name, precision, recall, fbeta))
+    print('\n')
+
+
 def main():
     dataset = load_dataset(DATA_FILE)
     print_dataset_info("\nWhole dataset", dataset)
     train_dataset, test_dataset = split_dataset(dataset)
     print_dataset_info("\nTrain dataset", train_dataset)
     print_dataset_info("\nTest dataset", test_dataset)
-    X_train, y_train, X_test, y_test = process_datasets(
+    X_train, y_train, X_test, y_test, encoder, lb = process_datasets(
         train_dataset, test_dataset)
     # print_xy('\nX_train', X_train, y_train)
     print('\nX_test[0]:\n', X_test[0])
 
-    train_and_save_model(X_train, y_train)
+    #train_and_save_model(X_train, y_train)
 
     model = ml_model.load_model(MODEL_FILE)
     compute_results(model, X_test, y_test)
+    
+    classify_test_dataset(test_dataset, model, encoder, lb)
 
 
 if __name__ == "__main__":

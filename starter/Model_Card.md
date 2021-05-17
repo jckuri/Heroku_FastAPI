@@ -100,6 +100,14 @@ be regarded as the last word.
 
 ## Factors
 
+### Relevant Factors
+Relevant factors are demographic features like age, workclass, education, 
+marital status, occupation, race, sex, native country, and working hours per week.
+
+### Evaluation Factors
+Evaluation factors are gender (male/female) and age group (young/old).
+
+--------------------------------------------------------------------------------
 
 ## Metrics
 
@@ -110,7 +118,16 @@ be regarded as the last word.
 ## Quantitative Analyses
 
 ```
-TABLE
+SLICE			PRECISION	RECALL		F-BETA
+Young Men		0.7875		0.6408		0.7066
+Young Women		0.7559		0.5026		0.6038
+Old Men			0.7848		0.6371		0.7033
+Old Women		0.6786		0.4524		0.5429
+Young			0.7831		0.6180		0.6908
+Old			0.7758		0.6184		0.6882
+Men			0.7868		0.6398		0.7057
+Women			0.7419		0.4936		0.5928
+Test Dataset		0.7812		0.6181		0.6901
 ```
 
 ## Ethical Considerations
