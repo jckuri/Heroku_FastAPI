@@ -57,9 +57,13 @@ sklearn.model_selection.GridSearchCV
 **salary:** >50K, <=50K.
 
 ### Paper or other resource for more information:
+
+sklearn.ensemble.RandomForestClassifier
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
 
 ### Citation details:
+
+Census Income Data Set
 https://archive.ics.uci.edu/ml/datasets/census+income
 
 ### License:
@@ -136,7 +140,21 @@ F2-Measure (beta=2.0): Less weight on precision, more weight on recall
 
 ## Evaluation Data
 
+Evaluation data is the test data split of this dataset:
+
+Census Income Data Set
+https://archive.ics.uci.edu/ml/datasets/census+income
+
+Spaces between commas were removed as a preprocessing step.
+
 ## Training Data
+
+Training data is the training data split of this dataset:
+
+Census Income Data Set
+https://archive.ics.uci.edu/ml/datasets/census+income
+
+Spaces between commas were removed as a preprocessing step.
 
 ## Quantitative Analyses
 
