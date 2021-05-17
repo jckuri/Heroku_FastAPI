@@ -60,7 +60,7 @@ It means that you are calling the service `predict_salary` twice by passing
 
 `Result 1` is `0` which means the predicted salary is `<=50K`.<br/>
 `Result 2` is `1` which means the predicted salary is `>50K`.<br/>
-Both predictions are correct because they coincide with the register 1 and the register 2.
+Both predictions are correct because they coincide with the salaries of register 1 and register 2.
 
 
 # Environment Set up
