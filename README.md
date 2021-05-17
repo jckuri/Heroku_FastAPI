@@ -7,6 +7,11 @@ https://classroom.udacity.com/nanodegrees/nd0821**
 
 # Quick Review
 
+### Model Card
+
+You can read the Model Card in this link:<br/>
+[starter/Model_Card.md](starter/Model_Card.md)
+
 ### Deployed microservices
 
 You can visit the link https://udacity-salary-predictor.herokuapp.com/docs
