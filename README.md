@@ -5,7 +5,7 @@
 **Machine Learning DevOps Engineer Nanodegree<br/>
 https://classroom.udacity.com/nanodegrees/nd0821**
 
-# Usage and Quick Review
+# Quick Review
 
 ### Deployed microservices
 
@@ -120,6 +120,8 @@ $ sh train_model.sh
 ```
 
 --------------------------------------------------------------------------------
+
+# End of Quick Review
 
 --------------------------------------------------------------------------------
 
