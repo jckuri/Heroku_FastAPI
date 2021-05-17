@@ -1,0 +1,7 @@
+       age         workclass   fnlgt     education  education-num      marital-status         occupation   relationship   race     sex  capital-gain  capital-loss  hours-per-week native-country salary
+14160   27           Private  160178  Some-college             10            Divorced       Adm-clerical  Not-in-family  White  Female             0             0              38  United-States  <=50K
+27048   45         State-gov   50567       HS-grad              9  Married-civ-spouse    Exec-managerial           Wife  White  Female             0             0              40  United-States  <=50K
+28868   29           Private  185908     Bachelors             13  Married-civ-spouse    Exec-managerial        Husband  Black    Male             0             0              55  United-States   >50K
+5667    30           Private  190040     Bachelors             13       Never-married  Machine-op-inspct  Not-in-family  White  Female             0             0              40  United-States  <=50K
+7827    29  Self-emp-not-inc  189346  Some-college             10            Divorced       Craft-repair  Not-in-family  White    Male          2202             0              50  United-States  <=50K
+...
