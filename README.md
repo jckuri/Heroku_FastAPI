@@ -21,10 +21,10 @@ curl -X GET "https://udacity-salary-predictor.herokuapp.com"
 #14160   27           Private  160178  Some-college             10            Divorced       Adm-clerical  Not-in-family  White  Female             0             0              38  United-States  <=50K   
 #28868   29           Private  185908     Bachelors             13  Married-civ-spouse    Exec-managerial        Husband  Black    Male             0             0              55  United-States   >50K 
 
-echo "\nResult 1: "
+echo "\nResult of POST 1: "
 curl -X POST "https://udacity-salary-predictor.herokuapp.com/predict_salary" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"age\":27, \"workclass\":\"Private\", \"fnlgt\":160178, \"education\":\"Some-college\", \"education_num\":10, \"marital_status\":\"Divorced\", \"occupation\":\"Adm-clerical\", \"relationship\":\"Not-in-family\", \"race\":\"White\", \"sex\":\"Female\", \"capital_gain\":0, \"capital_loss\":0, \"hours_per_week\":38, \"native_country\":\"United-States\"}"
 
-echo "\nResult 2: "
+echo "\nResult of POST 2: "
 curl -X POST "https://udacity-salary-predictor.herokuapp.com/predict_salary" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"age\":29, \"workclass\":\"Private\", \"fnlgt\":185908, \"education\":\"Bachelors\", \"education_num\":13, \"marital_status\":\"Married-civ-spouse\", \"occupation\":\"Exec-managerial\", \"relationship\":\"Husband\", \"race\":\"Black\", \"sex\":\"Male\", \"capital_gain\":0, \"capital_loss\":0, \"hours_per_week\":55, \"native_country\":\"United-States\"}"
 
 echo ""
@@ -36,9 +36,9 @@ And if you run the script `test_remote_api.sh`, you will get:
 $ sh test_remote_api.sh 
 Testing GET:
 "Hello world"
-Result 1: 
+Result of POST 1: 
 0
-Result 2: 
+Result of POST 2: 
 1
 ```
 
@@ -58,8 +58,8 @@ It means that you are calling the service `predict_salary` twice by passing
 #28868   29           Private  185908     Bachelors             13  Married-civ-spouse    Exec-managerial        Husband  Black    Male             0             0              55  United-States   >50K 
 ```
 
-`Result 1` is `0` which means the predicted salary is `<=50K`.<br/>
-`Result 2` is `1` which means the predicted salary is `>50K`.<br/>
+`Result of POST 1` is `0` which means the predicted salary is `<=50K`.<br/>
+`Result of POST 2` is `1` which means the predicted salary is `>50K`.<br/>
 Both predictions are correct because they coincide with the salaries of register 1 and register 2.
 
 
