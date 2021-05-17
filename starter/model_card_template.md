@@ -66,7 +66,16 @@ https://archive.ics.uci.edu/ml/datasets/census+income
 Donation.
 
 ### Contact to send questions or comments about the model:
+
+**Model creator:**<br/>
+Juan Carlos Kuri Pinto<br/>
 jckuri@gmail.com
+
+**Dataset donor:**<br/>
+Ronny Kohavi and Barry Becker<br/>
+Data Mining and Visualization<br/>
+Silicon Graphics.<br/>
+e-mail: ronnyk '@' sgi.com for questions.
 
 --------------------------------------------------------------------------------
 
