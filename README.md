@@ -7,8 +7,12 @@ https://classroom.udacity.com/nanodegrees/nd0821**
 
 # Usage and Quick Review
 
+### Deployed microservices
+
 You can visit the link https://udacity-salary-predictor.herokuapp.com/docs
 in which the web app is deployed.
+
+### Test via curl
 
 The easiest way to test this web app is through the curl command. 
 Here is the script `test_remote_api.sh` to test this web app:
