@@ -58,12 +58,12 @@ sklearn.model_selection.GridSearchCV
 
 ### Paper or other resource for more information:
 
-sklearn.ensemble.RandomForestClassifier
+sklearn.ensemble.RandomForestClassifier<br/>
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
 
 ### Citation details:
 
-Census Income Data Set
+Census Income Data Set<br/>
 https://archive.ics.uci.edu/ml/datasets/census+income
 
 ### License:
@@ -125,7 +125,7 @@ Precision = TruePositives / (TruePositives + FalsePositives)
 Recall = TruePositives / (TruePositives + FalseNegatives)
 ```
 
-A Gentle Introduction to the Fbeta-Measure for Machine Learning
+A Gentle Introduction to the Fbeta-Measure for Machine Learning<br/>
 https://machinelearningmastery.com/fbeta-measure-for-machine-learning/
 
 ```
@@ -142,7 +142,7 @@ F2-Measure (beta=2.0): Less weight on precision, more weight on recall
 
 Evaluation data is the test data split of this dataset:
 
-Census Income Data Set
+Census Income Data Set<br/>
 https://archive.ics.uci.edu/ml/datasets/census+income
 
 Spaces between commas were removed as a preprocessing step.
@@ -151,7 +151,7 @@ Spaces between commas were removed as a preprocessing step.
 
 Training data is the training data split of this dataset:
 
-Census Income Data Set
+Census Income Data Set<br/>
 https://archive.ics.uci.edu/ml/datasets/census+income
 
 Spaces between commas were removed as a preprocessing step.
