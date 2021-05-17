@@ -42,6 +42,27 @@ Result 2:
 1
 ```
 
+What does it mean?
+It means that you are calling the service `predict_salary` twice by passing
+2 registers of the dataset:
+
+```
+# REGISTER 1:
+#       age         workclass   fnlgt     education  education-num      marital-status         occupation   relationship   race     sex  capital-gain  capital-loss  hours-per-week native-country salary
+#14160   27           Private  160178  Some-college             10            Divorced       Adm-clerical  Not-in-family  White  Female             0             0              38  United-States  <=50K   
+```
+
+```
+# REGISTER 2:
+#       age         workclass   fnlgt     education  education-num      marital-status         occupation   relationship   race     sex  capital-gain  capital-loss  hours-per-week native-country salary
+#28868   29           Private  185908     Bachelors             13  Married-civ-spouse    Exec-managerial        Husband  Black    Male             0             0              55  United-States   >50K 
+```
+
+`Result 1` is `0` which means the predicted salary is `<=50K`.<br/>
+`Result 2` is `1` which means the predicted salary is `>50K`.<br/>
+Both predictions are correct because they coincide with the register 1 and the register 2.
+
+
 # Environment Set up
 
 Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
