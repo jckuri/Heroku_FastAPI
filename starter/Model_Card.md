@@ -82,14 +82,24 @@ e-mail: ronnyk `@` sgi.com for questions.
 ## Intended Use
 
 ### Primary intended uses
+This model helps to predict whether the salary of a person is greater than $50K
+or not, based on many demographic features like age, workclass, education, 
+marital status, occupation, race, sex, native country, and working hours per week.
 
 ### Primary intended users
+This model is mostly educational. However, it could be used by marketing
+strategists to inform them about who could have enough money to buy some product.
+Credit cards could be also interested in this model.
 
 ### Out-of-scope use cases
+This model is not accurate enough to be taken so seriously. This model could
+inform users about who could have enough money. But their predictions cannot
+be regarded as the last word.
 
 --------------------------------------------------------------------------------
 
 ## Factors
+
 
 ## Metrics
 
@@ -98,6 +108,10 @@ e-mail: ronnyk `@` sgi.com for questions.
 ## Training Data
 
 ## Quantitative Analyses
+
+```
+TABLE
+```
 
 ## Ethical Considerations
 
