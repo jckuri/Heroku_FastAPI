@@ -69,13 +69,13 @@ Donation.
 
 **Model creator:**<br/>
 Juan Carlos Kuri Pinto<br/>
-jckuri@gmail.com
+jckuri `@` gmail.com
 
 **Dataset donor:**<br/>
 Ronny Kohavi and Barry Becker<br/>
 Data Mining and Visualization<br/>
 Silicon Graphics.<br/>
-e-mail: ronnyk '@' sgi.com for questions.
+e-mail: ronnyk `@` sgi.com for questions.
 
 --------------------------------------------------------------------------------
 
