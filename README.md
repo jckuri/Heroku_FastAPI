@@ -99,6 +99,13 @@ Result of POST 2:
 1
 ```
 
+### Test functions
+
+```
+$ pytest test_functions.py
+```
+
+--------------------------------------------------------------------------------
 
 # Environment Set up
 
