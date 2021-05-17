@@ -15,7 +15,7 @@ in which the web app is deployed.
 ### Tests via curl
 
 The easiest way to test this web app is through the curl command. 
-Here is the script `test_remote_api.sh` to test this web app:
+Here is the script `test_remote_rest_api.sh` to test this web app:
 
 ```
 echo "Testing GET:"
@@ -34,10 +34,10 @@ curl -X POST "https://udacity-salary-predictor.herokuapp.com/predict_salary" -H 
 echo ""
 ```
 
-And if you run the script `test_remote_api.sh`, you will get:
+And if you run the script `test_remote_rest_api.sh`, you will get:
 
 ```
-$ sh test_remote_api.sh 
+$ sh test_remote_rest_api.sh
 Testing GET:
 "Hello world"
 Result of POST 1: 
