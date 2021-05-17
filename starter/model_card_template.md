@@ -19,9 +19,26 @@ Random Forest Classifier
 
 ### Information about training algorithms, parameters, fairness constraints or other applied approaches, and features:
 
+**Learning algorithm:** Random Forest Classifier
+
+**Parameters:**
+
+```
+param_grid = {
+    'n_estimators': [200, 500],
+    'max_features': ['auto'],
+    'max_depth': [25, 100],
+    'criterion': ['gini', 'entropy']
+}
+```
+
+```
+sklearn.model_selection.GridSearchCV
+(estimator=Random Forests Classifier, param_grid = param_grid, cv = 5)
+```
 
 **Features:**
-age: continuous.
+age: continuous. (Young <=50, Old >50)
 workclass: Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Without-pay, Never-worked.
 fnlwgt: continuous.
 education: Bachelors, Some-college, 11th, HS-grad, Prof-school, Assoc-acdm, Assoc-voc, 9th, 7th-8th, 12th, Masters, 1st-4th, 10th, Doctorate, 5th-6th, Preschool.
@@ -54,6 +71,14 @@ jckuri@gmail.com
 --------------------------------------------------------------------------------
 
 ## Intended Use
+
+### Primary intended uses
+
+### Primary intended users
+
+### Out-of-scope use cases
+
+--------------------------------------------------------------------------------
 
 ## Factors
 
