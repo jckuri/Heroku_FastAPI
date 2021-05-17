@@ -5,7 +5,7 @@
 **Machine Learning DevOps Engineer Nanodegree<br/>
 https://classroom.udacity.com/nanodegrees/nd0821**
 
-# Usage
+# Usage and Quick Review
 
 You can visit the link https://udacity-salary-predictor.herokuapp.com/docs
 in which the web app is deployed.
