@@ -105,6 +105,20 @@ Result of POST 2:
 $ pytest test_functions.py
 ```
 
+### Train model
+
+The script `train_model.sh` executes the Python script `train_model.py`.
+Here is the contents of the script `train_model.sh`:
+
+```
+$ cat train_model.sh 
+python starter/starter/train_model.py
+```
+
+```
+$ sh train_model.sh
+```
+
 --------------------------------------------------------------------------------
 
 # Environment Set up
