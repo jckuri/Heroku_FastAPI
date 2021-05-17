@@ -15,29 +15,29 @@ in which the web app is deployed.
 ### Tests via curl
 
 The easiest way to test this web app is through the curl command. 
-Here is the script `test_remote_rest_api.sh` to test this web app:
+Here is the contents of the script `test_remote_rest_api.sh` to test this web app:
 
 ```
 echo "Testing GET:"
-curl -X GET "https://udacity-salary-predictor.herokuapp.com"
+curl -X GET "$1"
 
 #       age         workclass   fnlgt     education  education-num      marital-status         occupation   relationship   race     sex  capital-gain  capital-loss  hours-per-week native-country salary
 #14160   27           Private  160178  Some-college             10            Divorced       Adm-clerical  Not-in-family  White  Female             0             0              38  United-States  <=50K   
 #28868   29           Private  185908     Bachelors             13  Married-civ-spouse    Exec-managerial        Husband  Black    Male             0             0              55  United-States   >50K 
 
 echo "\nResult of POST 1: "
-curl -X POST "https://udacity-salary-predictor.herokuapp.com/predict_salary" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"age\":27, \"workclass\":\"Private\", \"fnlgt\":160178, \"education\":\"Some-college\", \"education_num\":10, \"marital_status\":\"Divorced\", \"occupation\":\"Adm-clerical\", \"relationship\":\"Not-in-family\", \"race\":\"White\", \"sex\":\"Female\", \"capital_gain\":0, \"capital_loss\":0, \"hours_per_week\":38, \"native_country\":\"United-States\"}"
+curl -X POST "$1/predict_salary" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"age\":27, \"workclass\":\"Private\", \"fnlgt\":160178, \"education\":\"Some-college\", \"education_num\":10, \"marital_status\":\"Divorced\", \"occupation\":\"Adm-clerical\", \"relationship\":\"Not-in-family\", \"race\":\"White\", \"sex\":\"Female\", \"capital_gain\":0, \"capital_loss\":0, \"hours_per_week\":38, \"native_country\":\"United-States\"}"
 
 echo "\nResult of POST 2: "
-curl -X POST "https://udacity-salary-predictor.herokuapp.com/predict_salary" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"age\":29, \"workclass\":\"Private\", \"fnlgt\":185908, \"education\":\"Bachelors\", \"education_num\":13, \"marital_status\":\"Married-civ-spouse\", \"occupation\":\"Exec-managerial\", \"relationship\":\"Husband\", \"race\":\"Black\", \"sex\":\"Male\", \"capital_gain\":0, \"capital_loss\":0, \"hours_per_week\":55, \"native_country\":\"United-States\"}"
+curl -X POST "$1/predict_salary" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"age\":29, \"workclass\":\"Private\", \"fnlgt\":185908, \"education\":\"Bachelors\", \"education_num\":13, \"marital_status\":\"Married-civ-spouse\", \"occupation\":\"Exec-managerial\", \"relationship\":\"Husband\", \"race\":\"Black\", \"sex\":\"Male\", \"capital_gain\":0, \"capital_loss\":0, \"hours_per_week\":55, \"native_country\":\"United-States\"}"
 
 echo ""
 ```
 
-And if you run the script `test_remote_rest_api.sh`, you will get:
+Execute the following command and you will get:
 
 ```
-$ sh test_remote_rest_api.sh
+$ sh test_remote_rest_api.sh https://udacity-salary-predictor.herokuapp.com
 Testing GET:
 "Hello world"
 Result of POST 1: 
@@ -66,6 +66,38 @@ You are also calling the POST `/predict_salary` twice by passing
 `Result of POST 1` is `0` which means the predicted salary is `<=50K`.<br/>
 `Result of POST 2` is `1` which means the predicted salary is `>50K`.<br/>
 Both predictions are correct because they coincide with the salaries of register 1 and register 2.
+
+### Testing REST API locally
+
+Execute the following command to start the web services locally:
+
+```
+$ sh start-rest-api-locally.sh 
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [30935] using watchgod
+INFO:     Started server process [30937]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```
+
+Here is the contents of the script `start-rest-api-locally.sh`:
+
+```
+$ cat start-rest-api-locally.sh 
+uvicorn main:app --reload
+```
+
+Once the web services are up locally, you can run:
+
+```
+$ sh test_remote_rest_api.sh http://127.0.0.1:8000
+Testing GET:
+"Hello world"
+Result of POST 1: 
+0
+Result of POST 2: 
+1
+```
 
 
 # Environment Set up
