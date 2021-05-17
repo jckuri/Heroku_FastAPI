@@ -111,6 +111,29 @@ Evaluation factors are gender (male/female) and age group (young/old).
 
 ## Metrics
 
+This model was evaluated with the metrics precision, recall, and Fbeta.
+
+```
+Precision = TruePositives / (TruePositives + FalsePositives)
+```
+
+```
+Recall = TruePositives / (TruePositives + FalseNegatives)
+```
+
+A Gentle Introduction to the Fbeta-Measure for Machine Learning
+https://machinelearningmastery.com/fbeta-measure-for-machine-learning/
+
+```
+Fbeta = ((1 + beta^2) * Precision * Recall) / (beta^2 * Precision + Recall)
+```
+
+Three common values for the beta parameter are as follows:
+
+F0.5-Measure (beta=0.5): More weight on precision, less weight on recall.
+F1-Measure (beta=1.0): Balance the weight on precision and recall.
+F2-Measure (beta=2.0): Less weight on precision, more weight on recall
+
 ## Evaluation Data
 
 ## Training Data
@@ -132,4 +155,13 @@ Test Dataset		0.7812		0.6181		0.6901
 
 ## Ethical Considerations
 
+- Given this model is not 100% accurate, its predictions should not be used
+  to discrimite people based on their demographic information and model users
+  should not use these model predictions to decide whether they will do
+  businesses or not with the people studied.
+
 ## Caveats and Recommendations
+
+- Given gender classes are binary (male/not male), which we include as 
+  male/female. Further work needed to evaluate across a spectrum of genders.
+
