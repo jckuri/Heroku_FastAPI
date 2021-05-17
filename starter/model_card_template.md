@@ -37,7 +37,7 @@ sklearn.model_selection.GridSearchCV
 (estimator=Random Forests Classifier, param_grid = param_grid, cv = 5)
 ```
 
-**Features:**
+**Features:**<br/>
 age: continuous. (Young <=50, Old >50)<br/>
 workclass: Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Without-pay, Never-worked.<br/>
 fnlwgt: continuous.<br/>
@@ -53,7 +53,7 @@ capital-loss: continuous.<br/>
 hours-per-week: continuous.<br/>
 native-country: United-States, Cambodia, England, Puerto-Rico, Canada, Germany, Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador, Trinadad&Tobago, Peru, Hong, Holand-Netherlands.<br/>
 
-**Label:**
+**Label:**<br/>
 salary: >50K, <=50K.
 
 ### Paper or other resource for more information:
