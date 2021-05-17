@@ -43,7 +43,8 @@ Result of POST 2:
 ```
 
 What does it mean?
-It means that you are calling the service `predict_salary` twice by passing
+It means that you are calling the GET `/` and the result is a greeting: `"Hello world"`
+You are also calling the POST `/predict_salary` twice by passing
 2 registers of the dataset:
 
 ```
