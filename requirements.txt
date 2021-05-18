@@ -3,8 +3,8 @@ numpy
 pandas
 scikit-learn
 pytest
-urllib3==1.22
-chardet==3.0.2
+#urllib3==1.22
+#chardet==3.0.2
 requests
 fastapi==0.63.0
 uvicorn
