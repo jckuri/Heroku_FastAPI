@@ -23,10 +23,23 @@ In other words, this website will return a greeting message: Hello world.
 You can visit the link https://udacity-salary-predictor.herokuapp.com/docs
 in which the web app is deployed.
 
-You can test the POST `` with the following parameters:
+You can test the POST `` with the following request body:
 
 ```
-{"age":29, "workclass":"Private", "fnlgt":185908, "education":"Bachelors", "education_num":13, "marital_status":"Married-civ-spouse", "occupation":"Exec-managerial", "relationship":"Husband", "race":"Black", "sex":"Male", "capital_gain":0, "capital_loss":0, "hours_per_week":55, "native_country":"United-States"}
+{
+"age":29, 
+"workclass":"Private", 
+"fnlgt":185908, 
+"education":"Bachelors", 
+"education_num":13, 
+"marital_status":"Married-civ-spouse", 
+"occupation":"Exec-managerial", 
+"relationship":"Husband", 
+"race":"Black", "sex":"Male", 
+"capital_gain":0, "capital_loss":0, 
+"hours_per_week":55, 
+"native_country":"United-States"
+}
 ```
 
 And the result will be:
