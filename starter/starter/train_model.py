@@ -65,6 +65,10 @@ def process_test_dataset(test_dataset, encoder, lb):
 def process_datasets(train_dataset, test_dataset):
     X_train, y_train, encoder, lb = process_train_dataset(train_dataset)
     X_test, y_test = process_test_dataset(test_dataset, encoder, lb)
+    print(f'X_train.shape={X_train.shape}')
+    print(f'y_train.shape={y_train.shape}')
+    print(f'X_test.shape={X_test.shape}')
+    print(f'y_test.shape={y_test.shape}')
     return X_train, y_train, X_test, y_test, encoder, lb
 
 

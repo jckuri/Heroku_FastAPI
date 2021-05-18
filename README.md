@@ -66,6 +66,21 @@ dvc dag
 dvcdag.png<br/>
 ![starter/screenshots/dvcdag.png](starter/screenshots/dvcdag.png)
 
+### Tests via pytest
+
+```
+$ pytest test_functions.py 
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: /media/jckuri/1.9TB/UDACITY/UDACITY REVIEWS/REVIEWS_MLDO/Deploying a Machine Learning Model on Heroku with FastAPI/Heroku_FastAPI
+plugins: flake8-1.0.7, anyio-3.0.1
+collected 7 items                                                              
+
+test_functions.py .......                                                [100%]
+
+============================== 7 passed in 4.09s ===============================
+```
+
 ### Tests via curl
 
 The easiest way to test this web app is through the curl command. 
