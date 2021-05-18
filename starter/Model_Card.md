@@ -170,7 +170,7 @@ https://archive.ics.uci.edu/ml/datasets/census+income
 ## Quantitative Analyses
 
 Two variables were used for the quantitative analyses:
-Age (young/old) and gender (male/female).
+Age (young <=50 / old >50) and gender (male / female).
 Four metrics were analyzed: Precision, recall, F-beta, and F1-score.
 Unitary results were analyzed for the variables age and gender.
 And intersectional results were analyzed for the same variables, creating 4
@@ -192,7 +192,7 @@ Test Dataset		0.7812		0.6181		0.6901		0.6901
 ## Ethical Considerations
 
 - Given this model is not 100% accurate, its predictions should not be used
-  to discrimite people based on their demographic information and model users
+  to discriminate people based on their demographic information and model users
   should not use these model predictions to decide whether they will do
   businesses or not with the people studied.
 - Salaries vary widely among countries. The salaries earned in developed 
