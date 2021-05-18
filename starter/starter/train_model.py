@@ -101,7 +101,8 @@ def compute_results(model, X_test, y_test):
     preds = ml_model.inference(model, X_test)
     precision, recall, fbeta = ml_model.compute_model_metrics(y_test, preds)
     f1_score = 2 * precision * recall / (precision + recall)
-    results = f'precision={precision}\nrecall={recall}\nfbeta={fbeta}\nf1_score={f1_score}\n'
+    results = f'precision={precision}\nrecall={recall}\n'
+    results += f'fbeta={fbeta}\nf1_score={f1_score}\n'
     print("\n" + results)
 
 
@@ -119,8 +120,8 @@ def compute_results_of_slice(slice_df, model, encoder, lb):
     precision, recall, fbeta = ml_model.compute_model_metrics(y, preds)
     f1_score = 2 * precision * recall / (precision + recall)
     return precision, recall, fbeta, f1_score
-    
-    
+
+
 def classify_test_dataset(test_dataset, model, encoder, lb):
     young_people = test_dataset[test_dataset['age'] <= 50]
     old_people = test_dataset[test_dataset['age'] > 50]
@@ -128,7 +129,11 @@ def classify_test_dataset(test_dataset, model, encoder, lb):
     women = test_dataset[test_dataset['sex'] == 'Female']
     print('young_people.shape', young_people.shape)
     print('old_people.shape', old_people.shape)
-    print('young_people + old_people:', young_people.shape[0] + old_people.shape[0], '\n')
+    print(
+        'young_people + old_people:',
+        young_people.shape[0] +
+        old_people.shape[0],
+        '\n')
     print('men.shape', men.shape)
     print('women.shape', women.shape)
     print('men + women:', men.shape[0] + women.shape[0], '\n')
@@ -140,17 +145,31 @@ def classify_test_dataset(test_dataset, model, encoder, lb):
     print('young_women.shape', young_women.shape)
     print('old_men.shape', old_men.shape)
     print('old_women.shape', old_women.shape)
-    print('young_men + young_women + old_men + old_women:', young_men.shape[0] + young_women.shape[0] + old_men.shape[0] + old_women.shape[0], '\n')
+    print(
+        'young_men + young_women + old_men + old_women:',
+        young_men.shape[0] +
+        young_women.shape[0] +
+        old_men.shape[0] +
+        old_women.shape[0],
+        '\n')
     print('ALL: test_dataset.shape', test_dataset.shape)
-    slices_dict = {'Young Men': young_men, 'Young Women': young_women, 
-        'Old Men\t': old_men, 'Old Women': old_women, 'Young\t': young_people,
-        'Old\t': old_people, 'Men\t': men, 'Women\t': women, 
+    slices_dict = {
+        'Young Men': young_men,
+        'Young Women': young_women,
+        'Old Men\t': old_men,
+        'Old Women': old_women,
+        'Young\t': young_people,
+        'Old\t': old_people,
+        'Men\t': men,
+        'Women\t': women,
         'Test Dataset': test_dataset}
     report = '\nSLICE\t\t\tPRECISION\tRECALL\t\tF-BETA\t\tF1-SCORE\n'
     for slice_name in slices_dict.keys():
         slice_df = slices_dict[slice_name]
-        precision, recall, fbeta, f1_score = compute_results_of_slice(slice_df, model, encoder, lb)
-        report += '{}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}\n'.format(slice_name, precision, recall, fbeta, f1_score)
+        precision, recall, fbeta, f1_score = compute_results_of_slice(
+            slice_df, model, encoder, lb)
+        report += '{}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}\n'.format(
+            slice_name, precision, recall, fbeta, f1_score)
     report += '\n'
     print(report)
     write_to_text_file(SLICE_TEXTFILE, report)
@@ -164,14 +183,13 @@ def main():
     print_dataset_info("\nTest dataset", test_dataset)
     X_train, y_train, X_test, y_test, encoder, lb = process_datasets(
         train_dataset, test_dataset)
-    # print_xy('\nX_train', X_train, y_train)
     print('\nX_test[0]:\n', X_test[0])
 
-    #train_and_save_model(X_train, y_train)
+    # train_and_save_model(X_train, y_train)
 
     model = ml_model.load_model(MODEL_FILE)
     compute_results(model, X_test, y_test)
-    
+
     classify_test_dataset(test_dataset, model, encoder, lb)
 
 
