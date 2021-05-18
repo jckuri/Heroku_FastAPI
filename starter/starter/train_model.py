@@ -113,7 +113,8 @@ def compute_results_of_slice(slice_df, model, encoder, lb):
     X, y = process_test_dataset(slice_df, encoder, lb)
     preds = ml_model.inference(model, X)
     precision, recall, fbeta = ml_model.compute_model_metrics(y, preds)
-    return precision, recall, fbeta
+    f1_score = 2 * precision * recall / (precision + recall)
+    return precision, recall, fbeta, f1_score
     
     
 def classify_test_dataset(test_dataset, model, encoder, lb):
@@ -141,7 +142,7 @@ def classify_test_dataset(test_dataset, model, encoder, lb):
         'Old Men\t': old_men, 'Old Women': old_women, 'Young\t': young_people,
         'Old\t': old_people, 'Men\t': men, 'Women\t': women, 
         'Test Dataset': test_dataset}
-    print('\nSLICE\t\t\tPRECISION\tRECALL\t\tF-BETA')
+    print('\nSLICE\t\t\tPRECISION\tRECALL\t\tF-BETA\t\tF1-SCORE')
     for slice_name in slices_dict.keys():
         slice_df = slices_dict[slice_name]
         precision, recall, fbeta = compute_results_of_slice(slice_df, model, encoder, lb)

@@ -180,6 +180,9 @@ Test Dataset		0.7812		0.6181		0.6901
 
 ## Caveats and Recommendations
 
-- Given gender classes are binary (male/not male), which we include as 
-  male/female. Further work needed to evaluate across a spectrum of genders.
-
+- Given gender classes are binary (male/female), further work is needed to
+  evaluate across a spectrum of genders.
+- Salaries vary widely among countries. The salaries earned in developed 
+  countries are higher than salaries earned in developing countries. High-class
+  citizens of developing countries can earn lesser than low-class citizens of
+  developed countries.
