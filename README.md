@@ -18,6 +18,7 @@ You can visit the link https://udacity-salary-predictor.herokuapp.com/
 in which you will receive the contents of the GET implemented on the root domain.
 In other words, this website will return a greeting message: Hello world.
 
+live_get.png
 ![starter/screenshots/live_get.png](starter/screenshots/live_get.png)
 
 You can visit the link https://udacity-salary-predictor.herokuapp.com/docs
@@ -44,12 +45,14 @@ You can test the POST `/predict_salary` with the following request body:
 
 And the result will be `1`, the person earns more than $50K:
 
+example.png
 ![starter/screenshots/example.png](starter/screenshots/example.png)
 
 ### Continuous Delivery Enabled via GitHub Actions
 
 Continuous Delivery was enabled with GitHub Actions:
 
+continuous_deloyment.png
 ![starter/screenshots/continuous_deloyment.png](starter/screenshots/continuous_deloyment.png)
 
 ### dvc dag
@@ -60,6 +63,7 @@ Type this command to see the model files tracked by DVC:
 dvc dag
 ```
 
+dvcdag.png
 ![starter/screenshots/dvcdag.png](starter/screenshots/dvcdag.png)
 
 ### Tests via curl
