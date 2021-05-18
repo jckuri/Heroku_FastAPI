@@ -1,4 +1,4 @@
-[![Python package](https://github.com/jckuri/Heroku_FastAPI/actions/workflows/python-package.yml/badge.svg)](https://github.com/jckuri/Heroku_FastAPI/actions/workflows/python-package.yml)
+[![Python application](https://github.com/jckuri/Heroku_FastAPI/actions/workflows/python-app.yml/badge.svg)](https://github.com/jckuri/Heroku_FastAPI/actions/workflows/python-app.yml)
 
 # Deploying a Machine Learning Model on Heroku with FastAPI
 
