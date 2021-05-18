@@ -46,7 +46,7 @@ def test_seconds_to_string():
     assert train_model.seconds_to_string(128) == '2 minutes 8.00 seconds'
     assert train_model.seconds_to_string(128.231) == '2 minutes 8.23 seconds'
 
-"""
+
 def test_inference():
     df = train_model.load_dataset(train_model.DATA_FILE)
     train_dataset, test_dataset = train_model.split_dataset(df)
@@ -69,4 +69,4 @@ def test_compute_model_metrics():
     assert type(precision) == numpy.float64
     assert type(recall) == numpy.float64
     assert type(fbeta) == numpy.float64
-"""
+
