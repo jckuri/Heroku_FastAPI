@@ -43,10 +43,33 @@ You can test the POST `/predict_salary` with the following request body:
 }
 ```
 
-And the result will be `1`, the person earns more than $50K:
+And the result will be `1`, which means the person earns more than $50K:
 
 example.png<br/>
 ![starter/screenshots/example.png](starter/screenshots/example.png)
+
+You can also test the POST `/predict_salary` with another person:
+
+```
+{
+"age":27, 
+"workclass":"Private", 
+"fnlgt":160178, 
+"education":"Some-college", 
+"education_num":10, 
+"marital_status":"Divorced", 
+"occupation":"Adm-clerical", 
+"relationship":"Not-in-family", 
+"race":"White", 
+"sex":"Female", 
+"capital_gain":0, 
+"capital_loss":0, 
+"hours_per_week":38, 
+"native_country":"United-States"
+}
+```
+
+The result should be `0`, which means the person earns less than $50K:
 
 ### Continuous Delivery Enabled via GitHub Actions
 
