@@ -94,16 +94,16 @@ live_post.png<br/>
 ### Tests via pytest
 
 ```
-$ pytest test_functions.py 
-============================= test session starts ==============================
+$ pytest test_functions.py --disable-warnings
+========================================= test session starts ==========================================
 platform linux -- Python 3.8.10, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
 rootdir: /media/jckuri/1.9TB/UDACITY/UDACITY REVIEWS/REVIEWS_MLDO/Deploying a Machine Learning Model on Heroku with FastAPI/Heroku_FastAPI
 plugins: flake8-1.0.7, anyio-3.0.1
-collected 7 items                                                              
+collected 10 items                                                                                     
 
-test_functions.py .......                                                [100%]
+test_functions.py ..........                                                                     [100%]
 
-============================== 7 passed in 4.09s ===============================
+==================================== 10 passed, 1 warning in 6.32s =====================================
 ```
 
 ### Tests via curl
