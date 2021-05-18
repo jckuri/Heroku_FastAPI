@@ -66,6 +66,31 @@ dvc dag
 dvcdag.png<br/>
 ![starter/screenshots/dvcdag.png](starter/screenshots/dvcdag.png)
 
+### POST to the API
+
+```
+$ python remote_function_calls.py 
+/home/jckuri/.local/lib/python3.8/site-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.4) or chardet (4.0.0) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+
+GET /
+Status code: 200 OK
+Result: "Hello world"
+
+POST /predict_salary
+Input data: {"age": 27, "workclass": "Private", "fnlgt": "160178", "education": "Some-college", "education_num": 10, "marital_status": "Divorced", "occupation": "Adm-clerical", "relationship": "Not-in-family", "race": "White", "sex": "Female", "capital_gain": 0, "capital_loss": 0, "hours_per_week": 38, "native_country": "United-States"}
+Status code: 200 OK
+Result: 0
+
+POST /predict_salary
+Input data: {"age": 29, "workclass": "Private", "fnlgt": "185908", "education": "Bachelors", "education_num": 13, "marital_status": "Married-civ-spouse", "occupation": "Exec-managerial", "relationship": "Husband", "race": "Black", "sex": "Male", "capital_gain": 0, "capital_loss": 0, "hours_per_week": 55, "native_country": "United-States"}
+Status code: 200 OK
+```
+
+live_post.png<br/>
+![starter/screenshots/live_post.png](starter/screenshots/live_post.png)
+
+
 ### Tests via pytest
 
 ```
