@@ -36,8 +36,10 @@ You can test the POST `/predict_salary` with the following request body:
 "marital_status":"Married-civ-spouse", 
 "occupation":"Exec-managerial", 
 "relationship":"Husband", 
-"race":"Black", "sex":"Male", 
-"capital_gain":0, "capital_loss":0, 
+"race":"Black", 
+"sex":"Male", 
+"capital_gain":0, 
+"capital_loss":0, 
 "hours_per_week":55, 
 "native_country":"United-States"
 }
