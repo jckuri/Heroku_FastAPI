@@ -152,7 +152,9 @@ Evaluation data is the test data split of this dataset:
 Census Income Data Set<br/>
 https://archive.ics.uci.edu/ml/datasets/census+income
 
-Spaces between commas were removed as a preprocessing step.
+**Preprocessing steps:**
+- Spaces between commas were removed.
+- Categorical features were transformed into one-hot encoding.
 
 ## Training Data
 
@@ -161,7 +163,9 @@ Training data is the training data split of this dataset:
 Census Income Data Set<br/>
 https://archive.ics.uci.edu/ml/datasets/census+income
 
-Spaces between commas were removed as a preprocessing step.
+**Preprocessing steps:**
+- Spaces between commas were removed.
+- Categorical features were transformed into one-hot encoding.
 
 ## Quantitative Analyses
 
