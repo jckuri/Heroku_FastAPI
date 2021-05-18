@@ -23,7 +23,7 @@ In other words, this website will return a greeting message: Hello world.
 You can visit the link https://udacity-salary-predictor.herokuapp.com/docs
 in which the web app is deployed.
 
-You can test the POST `` with the following request body:
+You can test the POST `/predict_salary` with the following request body:
 
 ```
 {
