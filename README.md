@@ -91,7 +91,11 @@ dvc dag
 dvcdag.png<br/>
 ![starter/screenshots/dvcdag.png](starter/screenshots/dvcdag.png)
 
-### POST to the API
+### POSTs to the API
+
+**The rubric asked:** "Write a script that POSTS to the API using the requests 
+module and returns both the result of model inference and the status code. 
+Include a screenshot of the result. Name this live_post.png."
 
 ```
 $ python remote_function_calls.py 
