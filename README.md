@@ -46,6 +46,12 @@ And the result will be `1`, the person earns more than $50K:
 
 ![starter/screenshots/example.png](starter/screenshots/example.png)
 
+### Continuous Delivery Enabled via GitHub Actions
+
+Continuous Delivery was enabled with GitHub Actions:
+
+![starter/screenshots/continuous_deloyment.png](starter/screenshots/continuous_deloyment.png)
+
 ### Tests via curl
 
 The easiest way to test this web app is through the curl command. 
