@@ -96,7 +96,8 @@ def write_to_text_file(textfile, text):
 def compute_results(model, X_test, y_test):
     preds = ml_model.inference(model, X_test)
     precision, recall, fbeta = ml_model.compute_model_metrics(y_test, preds)
-    results = f'precision={precision}\nrecall={recall}\nfbeta={fbeta}\n'
+    f1_score = 2 * precision * recall / (precision + recall)
+    results = f'precision={precision}\nrecall={recall}\nfbeta={fbeta}\nf1_score={f1_score}\n'
     print("\n" + results)
     write_to_text_file(SLICE_TEXTFILE, results)
 
@@ -145,8 +146,8 @@ def classify_test_dataset(test_dataset, model, encoder, lb):
     print('\nSLICE\t\t\tPRECISION\tRECALL\t\tF-BETA\t\tF1-SCORE')
     for slice_name in slices_dict.keys():
         slice_df = slices_dict[slice_name]
-        precision, recall, fbeta = compute_results_of_slice(slice_df, model, encoder, lb)
-        print('{}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}'.format(slice_name, precision, recall, fbeta))
+        precision, recall, fbeta, f1_score = compute_results_of_slice(slice_df, model, encoder, lb)
+        print('{}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}'.format(slice_name, precision, recall, fbeta, f1_score))
     print('\n')
 
 

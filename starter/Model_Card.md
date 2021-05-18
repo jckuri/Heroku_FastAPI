@@ -158,17 +158,24 @@ Spaces between commas were removed as a preprocessing step.
 
 ## Quantitative Analyses
 
+Two variables were used for the quantitative analyses:
+Age (young/old) and gender (male/female).
+Four metrics were analyzed: Precision, recall, F-beta, and F1-score.
+Unitary results were analyzed for the variables age and gender.
+And intersectional results were analyzed for the same variables, creating 4
+combinations: Young men, young women, old men, and old women.
+
 ```
-SLICE			PRECISION	RECALL		F-BETA
-Young Men		0.7875		0.6408		0.7066
-Young Women		0.7559		0.5026		0.6038
-Old Men			0.7848		0.6371		0.7033
-Old Women		0.6786		0.4524		0.5429
-Young			0.7831		0.6180		0.6908
-Old			0.7758		0.6184		0.6882
-Men			0.7868		0.6398		0.7057
-Women			0.7419		0.4936		0.5928
-Test Dataset		0.7812		0.6181		0.6901
+SLICE			PRECISION	RECALL		F-BETA		F1-SCORE
+Young Men		0.7875		0.6408		0.7066		0.7066
+Young Women		0.7559		0.5026		0.6038		0.6038
+Old Men			0.7848		0.6371		0.7033		0.7033
+Old Women		0.6786		0.4524		0.5429		0.5429
+Young			0.7831		0.6180		0.6908		0.6908
+Old			0.7758		0.6184		0.6882		0.6882
+Men			0.7868		0.6398		0.7057		0.7057
+Women			0.7419		0.4936		0.5928		0.5928
+Test Dataset		0.7812		0.6181		0.6901		0.6901
 ```
 
 ## Ethical Considerations
@@ -177,6 +184,10 @@ Test Dataset		0.7812		0.6181		0.6901
   to discrimite people based on their demographic information and model users
   should not use these model predictions to decide whether they will do
   businesses or not with the people studied.
+- Salaries vary widely among countries. The salaries earned in developed 
+  countries are higher than salaries earned in developing countries. So,
+  the outcome of this model is not a good predictor for the socioeconomic status
+  of citizens of a particular country.
 
 ## Caveats and Recommendations
 
@@ -184,5 +195,5 @@ Test Dataset		0.7812		0.6181		0.6901
   evaluate across a spectrum of genders.
 - Salaries vary widely among countries. The salaries earned in developed 
   countries are higher than salaries earned in developing countries. High-class
-  citizens of developing countries can earn lesser than low-class citizens of
+  citizens of developing countries can earn less money than low-class citizens of
   developed countries.
