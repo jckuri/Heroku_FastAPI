@@ -134,8 +134,8 @@ Fbeta = ((1 + beta^2) * Precision * Recall) / (beta^2 * Precision + Recall)
 
 Three common values for the beta parameter are as follows:
 
-F0.5-Measure (beta=0.5): More weight on precision, less weight on recall.
-F1-Measure (beta=1.0): Balance the weight on precision and recall.
+F0.5-Measure (beta=0.5): More weight on precision, less weight on recall.<br/>
+F1-Measure (beta=1.0): Balance the weight on precision and recall.<br/>
 F2-Measure (beta=2.0): Less weight on precision, more weight on recall
 
 F-score<br/>
