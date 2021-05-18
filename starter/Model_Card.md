@@ -138,7 +138,7 @@ F0.5-Measure (beta=0.5): More weight on precision, less weight on recall.
 F1-Measure (beta=1.0): Balance the weight on precision and recall.
 F2-Measure (beta=2.0): Less weight on precision, more weight on recall
 
-F-score
+F-score<br/>
 https://en.wikipedia.org/wiki/F-score
 
 ```
