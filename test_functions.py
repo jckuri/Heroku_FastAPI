@@ -72,13 +72,14 @@ def test_compute_model_metrics():
     assert isinstance(precision, numpy.float64)
     assert isinstance(recall, numpy.float64)
     assert isinstance(fbeta, numpy.float64)
-    
+
+
 def test_root_get():
     status_code, result = rfc.root_get()
     assert status_code == 200
     assert result == '"Hello world"'
-    
-    
+
+
 def test_inference_post_1():
     status_code, result = rfc.inference_post(rfc.PERSON1)
     assert status_code == 200
