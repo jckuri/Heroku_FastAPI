@@ -52,6 +52,16 @@ Continuous Delivery was enabled with GitHub Actions:
 
 ![starter/screenshots/continuous_deloyment.png](starter/screenshots/continuous_deloyment.png)
 
+### dvc dag
+
+Type this command to see the model files tracked by DVC:
+
+```
+dvc dag
+```
+
+![starter/screenshots/dvcdag.png](starter/screenshots/dvcdag.png)
+
 ### Tests via curl
 
 The easiest way to test this web app is through the curl command. 
