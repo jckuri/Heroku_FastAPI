@@ -14,8 +14,16 @@ You can read the Model Card in this link:<br/>
 
 ### Deployed microservices
 
+You can visit the link https://udacity-salary-predictor.herokuapp.com/
+in which you will receive the contents of the GET implemented on the root domain.
+In other words, this website will return a greeting message: Hello world.
+
+[starter/screenshots/live_get.png](starter/screenshots/live_get.png)
+
 You can visit the link https://udacity-salary-predictor.herokuapp.com/docs
 in which the web app is deployed.
+
+
 
 ### Tests via curl
 
