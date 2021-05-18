@@ -115,7 +115,7 @@ Evaluation factors are gender (male/female) and age group (young/old).
 
 ## Metrics
 
-This model was evaluated with the metrics precision, recall, and Fbeta.
+This model was evaluated with the metrics precision, recall, Fbeta, and F1-score.
 
 ```
 Precision = TruePositives / (TruePositives + FalsePositives)
@@ -137,6 +137,13 @@ Three common values for the beta parameter are as follows:
 F0.5-Measure (beta=0.5): More weight on precision, less weight on recall.
 F1-Measure (beta=1.0): Balance the weight on precision and recall.
 F2-Measure (beta=2.0): Less weight on precision, more weight on recall
+
+F-score
+https://en.wikipedia.org/wiki/F-score
+
+```
+F1 = 2 * precision * recall / (precision + recall)
+```
 
 ## Evaluation Data
 
