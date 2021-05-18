@@ -230,7 +230,116 @@ python starter/starter/train_model.py
 ```
 
 ```
-$ sh train_model.sh
+$ sh train_model.sh 
+
+Whole dataset (32561, 15):
+   age         workclass   fnlgt  education  education-num      marital-status         occupation   relationship   race     sex  capital-gain  capital-loss  hours-per-week native-country salary
+0   39         State-gov   77516  Bachelors             13       Never-married       Adm-clerical  Not-in-family  White    Male          2174             0              40  United-States  <=50K
+1   50  Self-emp-not-inc   83311  Bachelors             13  Married-civ-spouse    Exec-managerial        Husband  White    Male             0             0              13  United-States  <=50K
+2   38           Private  215646    HS-grad              9            Divorced  Handlers-cleaners  Not-in-family  White    Male             0             0              40  United-States  <=50K
+3   53           Private  234721       11th              7  Married-civ-spouse  Handlers-cleaners        Husband  Black    Male             0             0              40  United-States  <=50K
+4   28           Private  338409  Bachelors             13  Married-civ-spouse     Prof-specialty           Wife  Black  Female             0             0              40           Cuba  <=50K
+
+Train dataset (26048, 15):
+       age         workclass   fnlgt     education  education-num      marital-status       occupation   relationship   race     sex  capital-gain  capital-loss  hours-per-week native-country salary
+5514    33         Local-gov  198183     Bachelors             13       Never-married   Prof-specialty  Not-in-family  White  Female             0             0              50  United-States   >50K
+19777   36           Private   86459     Assoc-voc             11  Married-civ-spouse  Exec-managerial        Husband  White    Male             0          1887              50  United-States   >50K
+10781   58  Self-emp-not-inc  203039           9th              5           Separated     Craft-repair  Not-in-family  White    Male             0             0              40  United-States  <=50K
+32240   21           Private  180190     Assoc-voc             11  Married-civ-spouse  Farming-fishing        Husband  White    Male             0             0              46  United-States  <=50K
+9876    27           Private  279872  Some-college             10            Divorced    Other-service  Not-in-family  White    Male             0             0              40  United-States  <=50K
+
+Test dataset (6513, 15):
+       age         workclass   fnlgt     education  education-num      marital-status         occupation   relationship   race     sex  capital-gain  capital-loss  hours-per-week native-country salary
+14160   27           Private  160178  Some-college             10            Divorced       Adm-clerical  Not-in-family  White  Female             0             0              38  United-States  <=50K
+27048   45         State-gov   50567       HS-grad              9  Married-civ-spouse    Exec-managerial           Wife  White  Female             0             0              40  United-States  <=50K
+28868   29           Private  185908     Bachelors             13  Married-civ-spouse    Exec-managerial        Husband  Black    Male             0             0              55  United-States   >50K
+5667    30           Private  190040     Bachelors             13       Never-married  Machine-op-inspct  Not-in-family  White  Female             0             0              40  United-States  <=50K
+7827    29  Self-emp-not-inc  189346  Some-college             10            Divorced       Craft-repair  Not-in-family  White    Male          2202             0              50  United-States  <=50K
+Saving encoder:
+ OneHotEncoder(handle_unknown='ignore', sparse=False)
+Saving lb:
+ LabelBinarizer()
+X_train.shape=(26048, 108)
+y_train.shape=(26048,)
+X_test.shape=(6513, 108)
+y_test.shape=(6513,)
+
+Training model...
+Fitting 5 folds for each of 8 candidates, totalling 40 fits
+[CV 1/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=200;, score=0.851 total time=   5.5s
+[CV 2/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=200;, score=0.857 total time=   5.3s
+[CV 3/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=200;, score=0.859 total time=   5.3s
+[CV 4/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=200;, score=0.864 total time=   5.3s
+[CV 5/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=200;, score=0.866 total time=   5.2s
+[CV 1/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=500;, score=0.852 total time=  13.6s
+[CV 2/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=500;, score=0.858 total time=  13.4s
+[CV 3/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=500;, score=0.858 total time=  13.5s
+[CV 4/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=500;, score=0.865 total time=  13.5s
+[CV 5/5] END criterion=gini, max_depth=25, max_features=auto, n_estimators=500;, score=0.867 total time=  14.1s
+[CV 1/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=200;, score=0.845 total time=   6.3s
+[CV 2/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=200;, score=0.850 total time=   6.1s
+[CV 3/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=200;, score=0.850 total time=   5.9s
+[CV 4/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=200;, score=0.859 total time=   6.4s
+[CV 5/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=200;, score=0.860 total time=   6.4s
+[CV 1/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=500;, score=0.845 total time=  16.0s
+[CV 2/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=500;, score=0.851 total time=  15.9s
+[CV 3/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=500;, score=0.851 total time=  15.1s
+[CV 4/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=500;, score=0.858 total time=  15.1s
+[CV 5/5] END criterion=gini, max_depth=100, max_features=auto, n_estimators=500;, score=0.861 total time=  15.0s
+[CV 1/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=200;, score=0.853 total time=   6.1s
+[CV 2/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=200;, score=0.858 total time=   6.1s
+[CV 3/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=200;, score=0.858 total time=   6.2s
+[CV 4/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=200;, score=0.867 total time=   6.2s
+[CV 5/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=200;, score=0.868 total time=   6.0s
+[CV 1/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=500;, score=0.852 total time=  15.2s
+[CV 2/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=500;, score=0.860 total time=  15.2s
+[CV 3/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=500;, score=0.859 total time=  15.4s
+[CV 4/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=500;, score=0.868 total time=  15.3s
+[CV 5/5] END criterion=entropy, max_depth=25, max_features=auto, n_estimators=500;, score=0.868 total time=  15.0s
+[CV 1/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=200;, score=0.843 total time=   7.0s
+[CV 2/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=200;, score=0.853 total time=   7.0s
+[CV 3/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=200;, score=0.853 total time=   7.1s
+[CV 4/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=200;, score=0.859 total time=   7.1s
+[CV 5/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=200;, score=0.860 total time=   7.0s
+[CV 1/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=500;, score=0.845 total time=  17.7s
+[CV 2/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=500;, score=0.855 total time=  17.5s
+[CV 3/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=500;, score=0.852 total time=  17.7s
+[CV 4/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=500;, score=0.859 total time=  17.7s
+[CV 5/5] END criterion=entropy, max_depth=100, max_features=auto, n_estimators=500;, score=0.861 total time=  17.7s
+The model was trained in 7 minutes 33.25 seconds.
+
+precision=0.7811745776347546
+recall=0.6180776575429663
+fbeta=0.6901208244491827
+f1_score=0.6901208244491827
+
+young_people.shape (5211, 15)
+old_people.shape (1302, 15)
+young_people + old_people: 6513 
+
+men.shape (4387, 15)
+women.shape (2126, 15)
+men + women: 6513 
+
+young_men.shape (3462, 15)
+young_women.shape (1749, 15)
+old_men.shape (925, 15)
+old_women.shape (377, 15)
+young_men + young_women + old_men + old_women: 6513 
+
+ALL: test_dataset.shape (6513, 15)
+
+SLICE			PRECISION	RECALL		F-BETA		F1-SCORE
+Young Men		0.7875		0.6408		0.7066		0.7066
+Young Women		0.7559		0.5026		0.6038		0.6038
+Old Men			0.7848		0.6371		0.7033		0.7033
+Old Women		0.6786		0.4524		0.5429		0.5429
+Young			0.7831		0.6180		0.6908		0.6908
+Old			0.7758		0.6184		0.6882		0.6882
+Men			0.7868		0.6398		0.7057		0.7057
+Women			0.7419		0.4936		0.5928		0.5928
+Test Dataset		0.7812		0.6181		0.6901		0.6901
+
 ```
 
 --------------------------------------------------------------------------------
