@@ -193,8 +193,8 @@ Test Dataset		0.7812		0.6181		0.6901		0.6901
 
 - Given this model is not 100% accurate, its predictions should not be used
   to discriminate people based on their demographic information. And model users
-  should not use these model predictions to decide whether they will do
-  businesses or not with the people studied.
+  should not use these model predictions to decide if they will do
+  businesses with the people studied.
 - Salaries vary widely among countries. The salaries earned in developed 
   countries are higher than salaries earned in developing countries. So,
   the outcome of this model is not a good predictor for the socioeconomic status
