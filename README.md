@@ -42,7 +42,7 @@ You can test the POST `/predict_salary` with the following request body:
 }
 ```
 
-And the result will be:
+And the result will be `1`, the person earns more than $50K:
 
 ![starter/screenshots/example.png](starter/screenshots/example.png)
 
