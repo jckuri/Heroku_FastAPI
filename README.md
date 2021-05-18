@@ -57,7 +57,7 @@ continuous_deloyment.png<br/>
 
 ### dvc dag
 
-Type this command to see the model files tracked by DVC:
+Type this command to see the model files tracked by DVC: 
 
 ```
 dvc dag
