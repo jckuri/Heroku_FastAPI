@@ -22,6 +22,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - uses: iterative/setup-dvc@v1
+
 #    - uses: iterative/setup-dvc@v1
 #    
 #    - name: DVC pull
@@ -57,7 +59,3 @@ jobs:
       run: |
         pytest test_functions.py
         
-steps:
-  - uses: actions/checkout@v2
-
-  - uses: iterative/setup-dvc@v1
