@@ -110,6 +110,7 @@ Result: 0
 POST /predict_salary
 Input data: {"age": 29, "workclass": "Private", "fnlgt": "185908", "education": "Bachelors", "education_num": 13, "marital_status": "Married-civ-spouse", "occupation": "Exec-managerial", "relationship": "Husband", "race": "Black", "sex": "Male", "capital_gain": 0, "capital_loss": 0, "hours_per_week": 55, "native_country": "United-States"}
 Status code: 200 OK
+Result: 1
 ```
 
 live_post.png<br/>
@@ -216,12 +217,6 @@ Result of POST 1:
 0
 Result of POST 2: 
 1
-```
-
-### Test functions
-
-```
-$ pytest test_functions.py
 ```
 
 ### Train model
