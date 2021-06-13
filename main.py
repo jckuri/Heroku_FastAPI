@@ -72,6 +72,71 @@ class ModelFunctions:
 mf = ModelFunctions()
 
 
+def person_1():
+    return {
+        'age': 27,
+        'workclass': 'Private', 
+        'fnlgt': 160178,
+        'education': 'Some-college', 
+        'education_num': 10,
+        'marital_status': 'Divorced', 
+        'occupation': 'Adm-clerical',
+        'relationship': 'Not-in-family', 
+        'race': 'White', 
+        'sex': 'Female',
+        'capital_gain': 0, 
+        'capital_loss': 0, 
+        'hours_per_week': 38,
+        'native_country': 'United-States'
+    }
+    
+
+def person_2():
+    return {
+        "summary": "Person 2",
+        "description": "Person 2. His predicted salary should be 1, which means he earns more than $50K.",    
+        "value": {
+        'age': 29,
+        'workclass': 'Private',
+        'fnlgt': 185908,
+        'education': 'Bachelors',
+        'education_num': 13,
+        'marital_status': 'Married-civ-spouse',
+        'occupation': 'Exec-managerial',
+        'relationship': 'Husband',
+        'race': 'Black',
+        'sex': 'Male',
+        'capital_gain': 0,
+        'capital_loss': 0,
+        'hours_per_week': 55,
+        'native_country': 'United-States'
+        }
+    }
+
+
+class Person(pydantic.BaseModel):
+    age: int
+    workclass: str
+    fnlgt: str
+    education: str
+    education_num: int
+    marital_status: str
+    occupation: str
+    relationship: str
+    race: str
+    sex: str
+    capital_gain: int
+    capital_loss: int
+    hours_per_week: int
+    native_country: str
+    
+    class Config:
+        schema_extra = {
+            'examples': [person_1(), person_2()]
+        }
+
+
+"""
 def get_person_1():
     return {
         "summary": "Person 1",
@@ -118,39 +183,16 @@ def get_person_2():
     }
 
 
-class Person(pydantic.BaseModel):
-    age: int
-    workclass: str
-    fnlgt: str
-    education: str
-    education_num: int
-    marital_status: str
-    occupation: str
-    relationship: str
-    race: str
-    sex: str
-    capital_gain: int
-    capital_loss: int
-    hours_per_week: int
-    native_country: str
-    
-    class Config:
-        schema_extra = {
-            'examples': [get_person_1(), get_person_2()]
-        }
-
-
 def get_examples_of_persons():
     two_examples = {
         "person1": get_person_1(),
         "person2": get_person_2()
     } 
     return fastapi.Body(..., examples = two_examples)
-
+"""
 
 @app.post('/predict_salary')
 async def predict_salary(person: Person):
-#async def predict_salary(person: Person = get_examples_of_persons()):
     x = mf.person_to_numpy(person)
     print("\nx:\n", x)
     pred = mf.model.predict(x)
