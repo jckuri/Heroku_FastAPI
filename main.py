@@ -89,6 +89,60 @@ class Person(pydantic.BaseModel):
     native_country: str
 
 
+def get_person_1():
+    return {
+        "summary" : "Person 1",
+        "description" : "Person 1. Her predicted salary should be 0, which means she earns less than $50K.",
+        "value" : {
+            'age' = 27,
+            'workclass' = 'Private', 
+            'fnlgt' = 160178,
+            'education' = 'Some-college', 
+            'education_num' = 10,
+            'marital_status' = 'Divorced', 
+            'occupation' = 'Adm-clerical',
+            'relationship' = 'Not-in-family', 
+            'race' = 'White', 
+            'sex' = 'Female',
+            'capital_gain' = 0, 
+            'capital_loss' = 0, 
+            'hours_per_week' = 38,
+            'native_country' = 'United-States'
+        }
+    }
+    
+
+def get_person_2():
+    return {
+        "summary" : "Person 2",
+        "description" : "Person 2. His predicted salary should be 1, which means he earns more than $50K.",    
+        "value" : {
+            'age' = 29,
+            'workclass' = 'Private',
+            'fnlgt' = 185908,
+            'education' = 'Bachelors',
+            'education_num' = 13,
+            'marital_status' = 'Married-civ-spouse',
+            'occupation' = 'Exec-managerial',
+            'relationship' = 'Husband',
+            'race' = 'Black',
+            'sex' = 'Male',
+            'capital_gain' = 0,
+            'capital_loss' = 0,
+            'hours_per_week' = 55,
+            'native_country' = 'United-States'
+        }
+    }
+
+
+def get_examples_of_persons():
+    examples = {
+        "person1" : get_person_1(),
+        "person2" : get_person_2()
+    }
+    return Body(..., examples = examples)
+
+
 @app.post('/predict_salary')
 async def predict_salary(person: Person):
     x = mf.person_to_numpy(person)
