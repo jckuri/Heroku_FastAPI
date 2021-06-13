@@ -144,7 +144,7 @@ def get_examples_of_persons():
 
 
 @app.post('/predict_salary')
-async def predict_salary(person: Person):
+async def predict_salary(person: Person = get_examples_of_persons()):
     x = mf.person_to_numpy(person)
     print("\nx:\n", x)
     pred = mf.model.predict(x)
