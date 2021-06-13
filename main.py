@@ -72,23 +72,6 @@ class ModelFunctions:
 mf = ModelFunctions()
 
 
-class Person(pydantic.BaseModel):
-    age: int
-    workclass: str
-    fnlgt: str
-    education: str
-    education_num: int
-    marital_status: str
-    occupation: str
-    relationship: str
-    race: str
-    sex: str
-    capital_gain: int
-    capital_loss: int
-    hours_per_week: int
-    native_country: str
-
-
 def get_person_1():
     return {
         "summary": "Person 1",
@@ -135,6 +118,28 @@ def get_person_2():
     }
 
 
+class Person(pydantic.BaseModel):
+    age: int
+    workclass: str
+    fnlgt: str
+    education: str
+    education_num: int
+    marital_status: str
+    occupation: str
+    relationship: str
+    race: str
+    sex: str
+    capital_gain: int
+    capital_loss: int
+    hours_per_week: int
+    native_country: str
+    
+    class Config:
+        schema_extra = {
+            'examples': [get_person_1(), get_person_2()]
+        }
+
+
 def get_examples_of_persons():
     two_examples = {
         "person1": get_person_1(),
@@ -144,7 +149,8 @@ def get_examples_of_persons():
 
 
 @app.post('/predict_salary')
-async def predict_salary(person: Person = get_examples_of_persons()):
+async def predict_salary(person: Person):
+#async def predict_salary(person: Person = get_examples_of_persons()):
     x = mf.person_to_numpy(person)
     print("\nx:\n", x)
     pred = mf.model.predict(x)
