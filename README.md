@@ -7,7 +7,10 @@ https://classroom.udacity.com/nanodegrees/nd0821**
 
 # A more thorough explanation of the rubric item I failed
 
-blah
+- The API must implement GET and POST. GET must be on the root domain and give a greeting and POST on a different path that does model inference.
+- Use Python type hints such that FastAPI creates the automatic documentation.
+- Use a Pydantic model to ingest the body of the POST. This should implement an example (hint: Pydantic/FastAPI provides multiple ways to do this, see the docs for more information: https://fastapi.tiangolo.com/tutorial/schema-extra-example/).
+- Include a screenshot of the docs that shows the example and name it example.png.
 
 # Quick Review
 
