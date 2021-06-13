@@ -140,7 +140,7 @@ def get_examples_of_persons():
         "person1": get_person_1(),
         "person2": get_person_2()
     }
-    return Body(..., examples = two_examples)
+    return fastapi.Body(..., examples = two_examples)
 
 
 @app.post('/predict_salary')
