@@ -114,9 +114,9 @@ def get_person_1():
 
 def get_person_2():
     return {
-        "summary" : "Person 2",
-        "description" : "Person 2. His predicted salary should be 1, which means he earns more than $50K.",    
-        "value" : {
+        "summary": "Person 2",
+        "description": "Person 2. His predicted salary should be 1, which means he earns more than $50K.",    
+        "value": {
             'age': 29,
             'workclass': 'Private',
             'fnlgt': 185908,
@@ -136,11 +136,11 @@ def get_person_2():
 
 
 def get_examples_of_persons():
-    examples: {
+    two_examples = {
         "person1": get_person_1(),
         "person2": get_person_2()
     }
-    return Body(..., examples = examples)
+    return Body(..., examples = two_examples)
 
 
 @app.post('/predict_salary')
