@@ -5,6 +5,10 @@
 **Machine Learning DevOps Engineer Nanodegree<br/>
 https://classroom.udacity.com/nanodegrees/nd0821**
 
+# A more thorough explanation of the rubric item I failed
+
+blah
+
 # Quick Review
 
 ### Model Card
