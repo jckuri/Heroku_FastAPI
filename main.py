@@ -139,7 +139,7 @@ def get_examples_of_persons():
     two_examples = {
         "person1": get_person_1(),
         "person2": get_person_2()
-    }
+    } 
     return fastapi.Body(..., examples = two_examples)
 
 
