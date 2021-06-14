@@ -119,11 +119,11 @@ async def predict_salary(person: Person = get_examples_of_persons()):
 
 ### Include a screenshot of the docs that shows the example and name it example.png.
 
-Example 1
+example.png
 
 ![starter/screenshots/example.png](starter/screenshots/example.png)
 
-Example 2
+example2.png
 
 ![starter/screenshots/example2.png](starter/screenshots/example2.png)
 
