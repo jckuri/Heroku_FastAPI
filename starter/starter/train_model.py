@@ -183,7 +183,7 @@ def main():
     print_dataset_info("\nTest dataset", test_dataset)
     X_train, y_train, X_test, y_test, encoder, lb = process_datasets(
         train_dataset, test_dataset)
-    #print('\nX_test[0]:\n', X_test[0])
+    # print('\nX_test[0]:\n', X_test[0])
 
     train_and_save_model(X_train, y_train)
 

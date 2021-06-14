@@ -97,29 +97,29 @@ def get_person_1():
         "description": desc,
         "value": {
             'age': 27,
-            'workclass': 'Private', 
+            'workclass': 'Private',
             'fnlgt': 160178,
-            'education': 'Some-college', 
+            'education': 'Some-college',
             'education_num': 10,
-            'marital_status': 'Divorced', 
+            'marital_status': 'Divorced',
             'occupation': 'Adm-clerical',
-            'relationship': 'Not-in-family', 
-            'race': 'White', 
+            'relationship': 'Not-in-family',
+            'race': 'White',
             'sex': 'Female',
-            'capital_gain': 0, 
-            'capital_loss': 0, 
+            'capital_gain': 0,
+            'capital_loss': 0,
             'hours_per_week': 38,
             'native_country': 'United-States'
         }
     }
-    
+
 
 def get_person_2():
     desc = "Person 2. His predicted salary should be 1, " \
         "which means he earns more than $50K."
     return {
         "summary": "Person 2",
-        "description": desc,    
+        "description": desc,
         "value": {
             'age': 29,
             'workclass': 'Private',
@@ -143,8 +143,8 @@ def get_examples_of_persons():
     two_examples = {
         "person1": get_person_1(),
         "person2": get_person_2()
-    } 
-    return fastapi.Body(..., examples = two_examples)
+    }
+    return fastapi.Body(..., examples=two_examples)
 
 
 @app.post('/predict_salary')
