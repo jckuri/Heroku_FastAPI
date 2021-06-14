@@ -119,9 +119,22 @@ async def predict_salary(person: Person = get_examples_of_persons()):
 
 ### Include a screenshot of the docs that shows the example and name it example.png.
 
+Example 1
+
 ![starter/screenshots/example.png](starter/screenshots/example.png)
 
+Example 2
+
 ![starter/screenshots/example2.png](starter/screenshots/example2.png)
+
+However, the examples only appear locally in the address: <br/>
+http://127.0.0.1:8000/docs<br/>
+When you run the script `sh start-rest-api-locally.sh`.<br/>
+You can test it!
+
+**Note:** For some unknown reason, the examples never appear in the
+Heroku website: <br/>
+https://udacity-salary-predictor.herokuapp.com/docs
 
 # Quick Review
 
