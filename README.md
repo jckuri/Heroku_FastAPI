@@ -141,6 +141,31 @@ https://udacity-salary-predictor.herokuapp.com/docs
 You can read the Model Card in this link:<br/>
 [starter/Model_Card.md](starter/Model_Card.md)
 
+### Run the unit test test_ml.py:
+
+```
+pytest test_ml.py -v
+========================================= test session starts =========================================
+platform linux -- Python 3.8.10, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- /home/jckuri/anaconda3/envs/Heroku_FastAPI/bin/python
+cachedir: .pytest_cache
+rootdir: /media/jckuri/1.9TB1/UDACITY/UDACITY REVIEWS/REVIEWS_MLDO/Deploying a Machine Learning Model on Heroku with FastAPI/Heroku_FastAPI
+plugins: flake8-1.0.7, anyio-3.0.1
+collected 10 items                                                                                    
+
+test_ml.py::test_load_dataset PASSED                                                            [ 10%]
+test_ml.py::test_split_dataset PASSED                                                           [ 20%]
+test_ml.py::test_process_train_dataset PASSED                                                   [ 30%]
+test_ml.py::test_process_test_dataset PASSED                                                    [ 40%]
+test_ml.py::test_seconds_to_string PASSED                                                       [ 50%]
+test_ml.py::test_inference PASSED                                                               [ 60%]
+test_ml.py::test_compute_model_metrics PASSED                                                   [ 70%]
+test_ml.py::test_root_get PASSED                                                                [ 80%]
+test_ml.py::test_inference_post_1 PASSED                                                        [ 90%]
+test_ml.py::test_inference_post_2 PASSED                                                        [100%]
+```
+
+![starter/screenshots/unit_test.png](starter/screenshots/unit_test.png)
+
 ### Deployed microservices
 
 You can visit the link https://udacity-salary-predictor.herokuapp.com/

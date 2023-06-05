@@ -5,7 +5,8 @@
 import requests
 import main as m
 
-DEFAULT_URL = 'https://udacity-salary-predictor.herokuapp.com'
+#DEFAULT_URL = 'https://udacity-salary-predictor.herokuapp.com'
+DEFAULT_URL = 'http://127.0.0.1:8000'
 
 PERSON1 = m.Person(age=27, workclass='Private', fnlgt=160178,
                    education='Some-college', education_num=10,
