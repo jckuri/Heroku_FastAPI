@@ -164,6 +164,7 @@ test_ml.py::test_inference_post_1 PASSED                                        
 test_ml.py::test_inference_post_2 PASSED                                                        [100%]
 ```
 
+**screenshots/unit_test.png**<br/>
 ![starter/screenshots/unit_test.png](starter/screenshots/unit_test.png)
 
 ### Deployed microservices
