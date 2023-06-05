@@ -5,8 +5,6 @@
 **Machine Learning DevOps Engineer Nanodegree<br/>
 https://classroom.udacity.com/nanodegrees/nd0821**
 
-# A more thorough explanation of the rubric item I failed
-
 ### The API must implement GET and POST. GET must be on the root domain and give a greeting and POST on a different path that does model inference.
 
 ```
