@@ -204,12 +204,25 @@ You can also test the POST `/predict_salary` with another person:
 
 The result should be `0`, which means the person earns less than $50K:
 
+<!--
 ### Continuous Delivery Enabled via GitHub Actions
 
 Continuous Delivery was enabled with GitHub Actions:
 
 continuous_deloyment.png<br/>
 ![starter/screenshots/continuous_deloyment.png](starter/screenshots/continuous_deloyment.png)
+-->
+
+### Continuous Integration
+
+Set up git with GitHub Actions.
+	
+* GitHub action should run pytest and flake8 on push to main/master.
+* PyTest must pass (by time the project is done there should be at least three tests) and flake8 must pass without errors.
+* Include a screenshot of the CI passing called `continuous_integration.png`.
+
+continuous_integration.png<br/>
+![starter/screenshots/continuous_integration.png](starter/screenshots/continuous_integration.png)
 
 ### dvc dag
 
