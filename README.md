@@ -189,6 +189,91 @@ Status code: <Response [200]>
 **screenshots/local_api.png**<br/>
 ![starter/screenshots/local_api.png](starter/screenshots/local_api.png)
 
+### Write a function that computes model metrics on slices of the data.
+	
+* Complete a function `performance_on_categorical_slice` in `ml/model.py` that computes performance on model slices.
+* Complet the `train_model.py` script that runs the `performance_on_categorical_slice` function that iterates through the distinct values in one of the features and prints out the model metrics for each value.
+* Output the printout to a file named `slice_output.txt`.
+
+```
+SLICE_TEXTFILE = 'slice_output.txt'
+...
+
+def compute_results_of_slice(slice_df, model, encoder, lb):
+    X, y = process_test_dataset(slice_df, encoder, lb)
+    preds = ml_model.inference(model, X)
+    precision, recall, fbeta = ml_model.compute_model_metrics(y, preds)
+    f1_score = 2 * precision * recall / (precision + recall)
+    return precision, recall, fbeta, f1_score
+
+def classify_test_dataset(test_dataset, model, encoder, lb):
+    young_people = test_dataset[test_dataset['age'] <= 50]
+    old_people = test_dataset[test_dataset['age'] > 50]
+    men = test_dataset[test_dataset['sex'] == 'Male']
+    women = test_dataset[test_dataset['sex'] == 'Female']
+    print('young_people.shape', young_people.shape)
+    print('old_people.shape', old_people.shape)
+    print(
+        'young_people + old_people:',
+        young_people.shape[0] +
+        old_people.shape[0],
+        '\n')
+    print('men.shape', men.shape)
+    print('women.shape', women.shape)
+    print('men + women:', men.shape[0] + women.shape[0], '\n')
+    young_men = young_people[young_people['sex'] == 'Male']
+    young_women = young_people[young_people['sex'] == 'Female']
+    old_men = old_people[old_people['sex'] == 'Male']
+    old_women = old_people[old_people['sex'] == 'Female']
+    print('young_men.shape', young_men.shape)
+    print('young_women.shape', young_women.shape)
+    print('old_men.shape', old_men.shape)
+    print('old_women.shape', old_women.shape)
+    print(
+        'young_men + young_women + old_men + old_women:',
+        young_men.shape[0] +
+        young_women.shape[0] +
+        old_men.shape[0] +
+        old_women.shape[0],
+        '\n')
+    print('ALL: test_dataset.shape', test_dataset.shape)
+    slices_dict = {
+        'Young Men': young_men,
+        'Young Women': young_women,
+        'Old Men\t': old_men,
+        'Old Women': old_women,
+        'Young\t': young_people,
+        'Old\t': old_people,
+        'Men\t': men,
+        'Women\t': women,
+        'Test Dataset': test_dataset}
+    report = '\nSLICE\t\t\tPRECISION\tRECALL\t\tF-BETA\t\tF1-SCORE\n'
+    for slice_name in slices_dict.keys():
+        slice_df = slices_dict[slice_name]
+        precision, recall, fbeta, f1_score = compute_results_of_slice(
+            slice_df, model, encoder, lb)
+        report += '{}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}\t\t{:.4f}\n'.format(
+            slice_name, precision, recall, fbeta, f1_score)
+    report += '\n'
+    print(report)
+    write_to_text_file(SLICE_TEXTFILE, report)
+```
+
+**slice_output.txt**<br/>
+```
+SLICE			PRECISION	RECALL		F-BETA		F1-SCORE
+Young Men		0.7875		0.6408		0.7066		0.7066
+Young Women		0.7559		0.5026		0.6038		0.6038
+Old Men			0.7848		0.6371		0.7033		0.7033
+Old Women		0.6786		0.4524		0.5429		0.5429
+Young			0.7831		0.6180		0.6908		0.6908
+Old			0.7758		0.6184		0.6882		0.6882
+Men			0.7868		0.6398		0.7057		0.7057
+Women			0.7419		0.4936		0.5928		0.5928
+Test Dataset		0.7812		0.6181		0.6901		0.6901
+```
+
+
 ### Deployed microservices
 
 You can visit the link https://udacity-salary-predictor.herokuapp.com/
