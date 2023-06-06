@@ -167,6 +167,28 @@ test_ml.py::test_inference_post_2 PASSED                                        
 **screenshots/unit_test.png**<br/>
 ![starter/screenshots/unit_test.png](starter/screenshots/unit_test.png)
 
+### Run the local API
+
+```
+python local_api.py 
+
+GET request
+Status code: <Response [200]>
+Welcome message: "Hello world"
+
+POST request. Data:
+{'age': 27, 'workclass': 'Private', 'fnlgt': 160178, 'education': 'Some-college', 'education_num': 10, 'marital_status': 'Divorced', 'occupation': 'Adm-clerical', 'relationship': 'Not-in-family', 'race': 'White', 'sex': 'Female', 'capital_gain': 0, 'capital_loss': 0, 'hours_per_week': 38, 'native_country': 'United-States'}
+Status code: <Response [200]>
+Result: "0"
+
+POST request. Data:
+{'age': 29, 'workclass': 'Private', 'fnlgt': 185908, 'education': 'Bachelors', 'education_num': 13, 'marital_status': 'Married-civ-spouse', 'occupation': 'Exec-managerial', 'relationship': 'Husband', 'race': 'Black', 'sex': 'Male', 'capital_gain': 0, 'capital_loss': 0, 'hours_per_week': 55, 'native_country': 'United-States'}
+Status code: <Response [200]>
+```
+
+**screenshots/local_api.png**<br/>
+![starter/screenshots/local_api.png](starter/screenshots/local_api.png)
+
 ### Deployed microservices
 
 You can visit the link https://udacity-salary-predictor.herokuapp.com/
