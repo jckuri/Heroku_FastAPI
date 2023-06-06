@@ -167,7 +167,17 @@ test_ml.py::test_inference_post_2 PASSED                                        
 **screenshots/unit_test.png**<br/>
 ![starter/screenshots/unit_test.png](starter/screenshots/unit_test.png)
 
-### Run the local API
+### Create a REST API.
+
+* In `main.py` The API must implement GET and POST. GET must be on the root domain and give a greeting, and POST on a different path that does model inference.
+
+You can see the implementation of [main.py](main.py).
+
+### API interaction
+	
+* The `local_api.py` has both GET and POST requests
+* The API is tested locally by running the local_api.py
+* A screenshot `local_api.png` showing the successful status code and the corresponding messages and results in the terminal.
 
 ```
 python local_api.py 
