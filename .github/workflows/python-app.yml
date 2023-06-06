@@ -48,5 +48,5 @@ jobs:
         
     - name: Test with pytest
       run: |
-        pytest test_functions.py --disable-warnings
+        pytest test_ml.py --disable-warnings
 
